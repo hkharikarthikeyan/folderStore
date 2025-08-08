@@ -1,0 +1,319 @@
+/* ========================
+   General Reset & Body
+======================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    text-align: center;
+}
+
+/* ========================
+   Headings & Containers
+======================== */
+h1 {
+    font-size: 2em;
+    margin: 20px 0;
+    color: #333;
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 1.5em;
+    color: #222;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================
+   Top Navbar Controls
+======================== */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px auto;
+}
+
+.icon-btn {
+    font-size: 22px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.icon-btn:hover {
+    background-color: #1565c0;
+}
+
+/* ========================
+   Forms: Upload & Create
+======================== */
+.create-form form,
+.upload-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#create-folder-form {
+    display: none;
+}
+.back-link{
+    text-decoration: none;
+    color: #f4f6f9;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"],
+select {
+    padding: 8px;
+    width: 100%;
+    max-width: 250px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button,
+button {
+    padding: 8px 16px;
+    background-color: #d29819;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form button:hover,
+button:hover {
+    background-color: #1565c0;
+}
+
+/* ========================
+   Folder Card View
+======================== */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.folder-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px 20px;
+    width: 220px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.folder-card:hover {
+    transform: translateY(-5px);
+}
+
+.folder-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.folder-icon {
+    font-size: 24px;
+}
+
+.folder-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.folder-link:hover {
+    color: #007BFF;
+}
+
+/* ========================
+   Folder Delete Button
+======================== */
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+/* ========================
+   File List View (if needed)
+======================== */
+.file-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.file-item {
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.file-name {
+    font-size: 16px;
+    color: #333;
+    flex: 1 1 auto;
+    margin-right: 10px;
+}
+
+.open-btn {
+    text-decoration: none;
+    color: #2196F3;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.open-btn:hover {
+    color: #1565c0;
+}
+
+.file-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.file-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    width: 240px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.file-header {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.file-name {
+    display: inline-block;
+    margin-left: 8px;
+    color: #333;
+    word-break: break-word;
+}
+
+.file-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.open-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.open-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-form button {
+    background-color: #f44336;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-form button:hover {
+    background-color: #d32f2f;
+}
+
+
+/* ========================
+   Responsive Design
+======================== */
+@media (max-width: 600px) {
+    .file-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .upload-form,
+    .create-form form {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 10px;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    select {
+        max-width: 100%;
+    }
+
+    .folder-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ folder }} - Files</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📂 Folder: {{ folder }}</h1>
+            <div class="actions">
+              <button> <a class="back-link" href="/">← Back to Home</a></button> 
+                
+            </div>
+        </header>
+
+       <div class="file-card-container">
+    {% for file in files %}
+        {% if file.filename %}
+        <div class="file-card">
+            <div class="file-header">
+                📄 <span class="file-name">{{ file.filename }}</span>
+            </div>
+            <div class="file-actions">
+                <a class="open-btn" href="{{ url_for('read_file', folder=file.folder, filename=file.filename) }}">Open</a>
+
+                <form class="delete-form" action="{{ url_for('delete_file', folder=file.folder, filename=file.filename) }}" method="POST">
+                    <button type="submit" onclick="return confirm('Delete this file?');">🗑️</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+    </div>
+</body>
+</html>
