@@ -106,7 +106,23 @@ def read_file(folder, filename):
         return f"""
         <h2>{filename}</h2>
         <embed src='/static_view/{folder}/{filename}' width='800px' height='600px' />
-        <br><a href='/folder/{folder}'>Back</a>
+        <a href='/folder/{folder}'>
+        <button style="
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        ">
+            Back
+        </button>
+    </a>
         """
 
     elif ext in ['jpg', 'jpeg', 'png']:
