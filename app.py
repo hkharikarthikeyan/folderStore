@@ -170,10 +170,12 @@ def read_file(folder, filename):
         <br><a href='/folder/{folder}'><button style="{button_style()}">Back</button></a>
         """
 
-    elif ext == 'docx':
-        doc = Document(file_path)
-        text = '\n'.join([para.text for para in doc.paragraphs])
-        return f"<h2>{filename}</h2><pre>{text}</pre><a href='/folder/{folder}'>Back</a>"
+    elif ext in ['doc', 'docx']:
+        file_url = url_for('static_view', folder=folder, filename=filename, _external=True)
+        return f"""
+    <iframe src="https://view.officeapps.live.com/op/embed.aspx?src={file_url}"
+            style="width:100%; height:100vh;" frameborder="0"></iframe>
+    """
 
     else:
         return "Unsupported file type"
